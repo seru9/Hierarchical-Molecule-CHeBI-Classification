@@ -1,5 +1,5 @@
 # Hierarchical Molecule (CHeBI)
-## src3
+## src3 - Graph approach using GIN
 ### Embeddings preparation
 **`vectorize_data.py`**
 We convert molecules from SMILES strings into graphs, incorporating a custom feature extraction step where `get_atom_features()` encodes the attributes of each atom. Using RDKit's `Chem.MolFromSmiles`, the script parses strings (such as `CCO` for ethanol) loaded from Parquet files. To ensure efficient data handling, the resulting graph objects are not stored as JSON or text; instead, they are saved directly as binary `.pt` files using `torch.save`, which allows for seamless loading into PyTorch.
